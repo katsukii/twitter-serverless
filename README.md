@@ -74,6 +74,21 @@ $ zip process-tweet-data.zip process-tweet-data.py
 $ aws lambda create-function --function-name process-tweet-data \
 --zip-file fileb://path_to/process-tweet-data.zip \
 --role arn:aws:iam:111122223333:role/process-tweet-data-role \
---handler process-tweet-data.lambda_handler --funtime python3.6 \
+--handler process-tweet-data.lambda_handler --rintime python3.6 \
 --environment Variables={TABLE_NAME=tweet-data}
 ```
+
+# Lambda関数のイベントソースとしてKinesisストリームを指定
+
+```
+$ aws lambda create-event-source-mapping --event-source- \
+arn arn:aws:kinesis:ap-northeast-1:111122223333 \
+:stream/twitter-stream \
+--function-name process-tweet-data --enabled \
+--starting-position LATEST
+```
+
+
+
+
+
