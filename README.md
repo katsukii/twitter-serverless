@@ -81,14 +81,9 @@ $ aws lambda create-function --function-name process-tweet-data \
 # Lambda関数のイベントソースとしてKinesisストリームを指定
 
 ```
-$ aws lambda create-event-source-mapping --event-source- \
-arn arn:aws:kinesis:ap-northeast-1:111122223333 \
-:stream/twitter-stream \
+$ aws lambda create-event-source-mapping --event-source-arn \
+arn:aws:kinesis:ap-northeast-1:111122223333:stream/twitter-stream \
 --function-name process-tweet-data --enabled \
 --starting-position LATEST
 ```
-
-
-
-
 
