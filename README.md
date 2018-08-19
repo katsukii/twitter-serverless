@@ -73,7 +73,7 @@ $ zip process-tweet-data.zip process-tweet-data.py
 ```
 $ aws lambda create-function --function-name process-tweet-data \
 --zip-file fileb://path_to/process-tweet-data.zip \
---role arn:aws:iam:111122223333:role/process-tweet-data-role \
+--role arn:aws:iam::111122223333:role/process-tweet-data-role \
 --handler process-tweet-data.lambda_handler --runtime python3.6 \
 --environment Variables={TABLE_NAME=tweet-data}
 ```
